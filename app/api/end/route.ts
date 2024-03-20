@@ -7,22 +7,22 @@ export async function POST(req: NextRequest): Promise<Response> {
 
   let path: string;
   if (buttonId === 1) {
-    path = "cosmiccowboys";
+    path = "yay";
   } else if (buttonId === 2) {
-    path = "pinatacloud";
+    path = "nay";
   } else if (buttonId === 3) {
-    path = "video";
+    path = "abstain";
   } else {
     path = "";
   }
   const headers = new Headers();
   headers.set("Location", `${process.env.NEXT_PUBLIC_BASE_URL}/`);
   const response = NextResponse.redirect(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/${path}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/vote?vote=${path}`,
     {
       headers: headers,
       status: 302,
-    },
+    }
   );
   return response;
 }

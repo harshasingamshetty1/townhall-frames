@@ -1,23 +1,25 @@
-import { getFrameMetadata } from '@coinbase/onchainkit';
-import type { Metadata } from 'next';
+import { getFrameMetadata } from "@coinbase/onchainkit";
+import type { Metadata } from "next";
 
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Begin"
-    }
+      label: "View Summary",
+    },
   ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`,
+  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmRWkJLhQ3D8YEHGJHq5jfDRAMZoeqHmFBtERTCB4EdYMd/0.png`,
   post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
 });
 
 export const metadata: Metadata = {
-  title: 'Cosmic Cowboys',
-  description: 'A frame telling the story of Cosmic Cowboys',
+  title: "Townhall Proposal Voting",
+  description: "A frame to allow users to vote on townhall proposals",
   openGraph: {
-    title: 'Cosmic Cowboys',
-    description: 'A frame telling the story of Cosmic Cowboys',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`],
+    title: "Townhall Proposal Voting",
+    description: "A frame to allow users to vote on townhall proposals",
+    images: [
+      `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmRWkJLhQ3D8YEHGJHq5jfDRAMZoeqHmFBtERTCB4EdYMd/1.png`,
+    ],
   },
   other: {
     ...frameMetadata,
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>Cosmic Cowboys</h1>
+      <h1>Townhall Proposal</h1>
     </>
   );
 }
